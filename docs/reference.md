@@ -111,3 +111,65 @@ WIP
 WIP
 ### sum()
 WIP
+
+## Filters
+
+### json()
+
+### lowercase()
+
+### uppercase()
+
+### hide()
+```js
+{{ 'random text' | hide('text') }}
+```
+
+Returns:
+```
+'random'
+```
+
+### boolean()
+
+### initials()
+```js
+{{ 'Ilyas Deckers' | initials() }}
+```
+
+Returns:
+```
+'ID'
+```
+
+### truncate()
+```js
+{{ 'Some long string, with random text' | truncate(15, '...') }}
+```
+
+Returns:
+```
+'Some long strin...'
+```
+
+### currency
+```js
+{{ 1500.45563256 | currency(2) }}
+```
+
+Returns:
+```
+€1,500.45
+```
+
+### number
+```js
+{{ 150435.45546 | number(3) }}
+```
+
+Returns:
+```
+150,435.455
+```
+
+
