@@ -1,6 +1,7 @@
 ---
 to: "src/app/<%= h.inflection.dasherize(folder).toLowerCase() %>/<%= h.inflection.dasherize(name).toLowerCase().slice(0, 5) === 'base-' ? '_' : '' %><%= h.inflection.dasherize(name) %>.vue"
 eof_last: false
+unless_exists: true
 ---
 <%
 if (blocks.indexOf('template') !== -1) {
