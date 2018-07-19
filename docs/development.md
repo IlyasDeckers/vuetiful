@@ -20,6 +20,8 @@ npm run new view
 ### Components
 See [generating components](/docs/components.html#base-components-2)
 
+### Plugins
+See [creating plugins](/docs/plugins.html#creating-plugins)
 ### Vuex modules
 WIP
 

@@ -1,8 +1,5 @@
 # Plugins
 
-## Creating plugins
-WIP
-
 ## Authentication
 Authentication is handled bij the Auth plugin located in plugins/auth.js. You can use this plugin from any page to login, logout, check,... without importing the auth plugin.
 > Important! The auth plugin expects the Bearer token to be present in the response under `access_token`.
@@ -66,3 +63,10 @@ this.$toastr.e({
   preventDuplicates: true
 }, 'Title!')
 ```
+
+## Creating plugins
+Plugins can be created on the fly and are installed automatically as `$pluginName` for your convenience. These plugins are base templates that can be used to quickly create plugins for your application.
+```js
+npm run new plugin
+```
+If you would like to place the plugin in a subfolder of `/plugins` then use this naming convention on generation: `folder_name/plugin_name`
