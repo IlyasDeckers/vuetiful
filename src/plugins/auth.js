@@ -28,13 +28,11 @@ const auth = {
         return response
       },
       error => {
-        console.log(error)
-        console.log('Auth err')
         if (error.response.status === 401) {
           this.logout()
         }
         if (error.response.status === 500) {
-          console.log(error.response.data)
+          // Internal Server Error
         }
         return Promise.reject(error)
       }
@@ -53,9 +51,13 @@ const auth = {
     return arrayGet(store.state.auth, key)
   },
   context () {
-    return this.get('user.role') === 'admin'
-      ? 'manager'
-      : this.get('user.role')
+    if (this.get('user.role')) {
+      return this.get('user.role') === 'admin'
+        ? 'manager'
+        : this.get('user.role')
+    }
+
+    return 'No roles'
   },
   user () {
     return store.state.auth.user
@@ -65,5 +67,3 @@ const auth = {
 export function install (Vue) {
   Vue.prototype.$auth = auth
 }
-
-export default auth

@@ -2,12 +2,9 @@
 import merge from './merge';
 
 export { default as merge } from './merge';
-
-export function replace(array, item) {
-  const id = array.findIndex(x => x.id === item.id);
-  const data = array[id];
-  return array.splice(id, 1, merge(data, item));
-}
+export { default as replace } from './replace';
+export { default as remove } from './remove';
+export { default as compare } from './compare';
 
 if (!Array.prototype.update) {
   Object.defineProperty(Array.prototype, 'update', {
@@ -19,11 +16,6 @@ if (!Array.prototype.update) {
   });
 }
 
-export function remove(array, item) {
-  const id = array.findIndex(x => x.id === item.id);
-  return array.splice(id, 1);
-}
-
 if (!Array.prototype.remove) {
   Object.defineProperty(Array.prototype, 'remove', {
     enumerable: false,
@@ -32,17 +24,6 @@ if (!Array.prototype.remove) {
       return this.splice(id, 1);
     },
   });
-}
-
-export function compare(x, y, reverse = false) {
-  let comparison = 0;
-
-  if (x > y) {
-    comparison = 1;
-  } else if (x < y) {
-    comparison = -1;
-  }
-  return reverse ? comparison * -1 : comparison;
 }
 
 export function array_get(obj, str) {
