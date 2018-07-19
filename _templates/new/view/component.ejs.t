@@ -14,7 +14,8 @@ if (blocks.indexOf('template') !== -1) {
 }
 
 if (blocks.indexOf('script') !== -1) {
-%><script>
+%>
+<script>
 export default {
 }
 </script>
