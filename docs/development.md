@@ -1,6 +1,6 @@
 # Development
 
-## npm
+## Installation
 
 ``` bash
 # install dependencies
@@ -10,12 +10,17 @@ npm install
 npm run dev
 ```
 
-## Yarn
+## Generating
 
-``` bash
-# install dependencies
-yarn install
-
-# serve with hot reload at localhost:8080
-yarn run dev
+### Views
+```bash
+npm run new view
 ```
+
+### Components
+See [generating components](/docs/components.html#base-components-2)
+
+### Vuex modules
+WIP
+
+

@@ -1,6 +1,7 @@
 # Plugins
 
 ## Creating plugins
+WIP
 
 ## Authentication
 Authentication is handled bij the Auth plugin located in plugins/auth.js. You can use this plugin from any page to login, logout, check,... without importing the auth plugin.
