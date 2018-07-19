@@ -32,7 +32,7 @@
 <script>
 export default {
   created () {
-
+    console.log(this.$plugin)
   }
 }
 </script>

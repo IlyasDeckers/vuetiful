@@ -31,7 +31,7 @@ export default {
     }
   },
   created () {
-    console.log('Created Toast')
+    // console.log('Created Toast')
   },
   mounted () {
     // console.log("ready", this.list);
@@ -93,7 +93,7 @@ export default {
       return data
     },
     processObjectData (data) {
-      console.log(data)
+      // console.log(data)
       // if Object
       if (typeof data === 'object' && typeof data.msg !== 'undefined') {
         if (typeof data.position === 'undefined') {
