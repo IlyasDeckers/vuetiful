@@ -1,5 +1,5 @@
 # Vuetiful
-> A Vue.js framework for rapid SPA development.
+> A very opinionated Vue.js framework for rapid SPA development.
 
 ## Introduction
 Vuetiful originated from a personal repository that was used on daily basis to speed up the development process and to provide a standardized way to work in teams on larger projects. The use cases are wide; test new ideas, prototype, build production-ready SPA's,... This repository will be updated at a regular basis as this Vuetiful still a WIP.
