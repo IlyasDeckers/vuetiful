@@ -13,7 +13,8 @@
     "test:e2e": "vue-cli-service test:e2e",
     "new": "hygen new",
     "docs:dev": "vuepress dev",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "mobile": "./init-mobile"
   },
   "dependencies": {
     "axios": "^0.18.0",
