@@ -1,0 +1,20 @@
+.card {
+  @apply .rounded .rounded-t-lg .overflow-hidden .shadow .bg-grey-lighter  .px-6 .mt-4 .flex-1;
+  overflow: visible;
+}
+
+.card-header {
+  @apply .border-b .mb-4 p-4;
+}
+
+.card-body {
+  @apply .mb-4 p-4;
+}
+
+.card-footer {
+  @apply .border-t .mb-4 .p-4;
+}
+
+.card-title {
+  @apply .my-4;
+}
