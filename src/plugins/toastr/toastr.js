@@ -1,4 +1,4 @@
-import Toast from '@/components/notifications/Toast'
+import Toast from './components/Toast'
 
 export function install (Vue) {
   let MyComponent = Vue.extend({

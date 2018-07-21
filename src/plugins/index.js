@@ -13,10 +13,12 @@ requireModule.keys().forEach(fileName => {
   // Skip this file, as it's not a plugin
   if (fileName === './index.js') return
 
+  // Fomat the plugin name from fileName
   const pluginName = fileName
     .replace(/^\.\//, '')
     .replace(/\.\w+$/, '')
 
+  // Require the plugin
   const plugin = require('./' + pluginName)
   Vue.use(plugin.install)
 
