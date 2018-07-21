@@ -7,7 +7,7 @@ import { sync } from 'vuex-router-sync'
 import VueHighlightJS from 'vue-highlightjs'
 
 import '@/plugins'
-import '@/components/_globals'
+import '@/components'
 
 sync(store, router)
 
