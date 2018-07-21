@@ -7,8 +7,8 @@ module.exports = merge(prodEnv, {
   API_URL: '"http://127.0.0.1:8000"',
   PUSHER: {
     ENABLED: false,
-    KEY: '"028d91c748f82d72ccd4"',
+    KEY: '"your-key"',
     CLUSTER: '"eu"'
   },
-  FA_PRO: true
+  FA_PRO: false
 })
