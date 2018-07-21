@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# if cordova exists do not install
+
+cordova create mobile com.f1lt3r."${PWD##*/}"
+
+rm -rf mobile/www/*
+ln -s $(pwd)/dist/* $(pwd)/mobile/www/
+
+cd mobile
+cordova platform add android

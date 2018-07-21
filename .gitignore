@@ -12,6 +12,7 @@ node_modules/
 /tests/e2e/screenshots/
 /tests/unit/coverage/
 /coverage/
+/mobile/
 
 # Local Env Files
 .env.local
