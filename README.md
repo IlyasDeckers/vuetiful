@@ -1,4 +1,6 @@
 # Vuetiful
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FIlyasDeckers%2Fvuetiful.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FIlyasDeckers%2Fvuetiful?ref=badge_shield)
+
 > A very opinionated Vue.js framework for rapid SPA development.
 
 ## Introduction
@@ -22,3 +24,7 @@ The goal of this project is to help Vue developers build quality applications in
 
 ## Documentation
 [Read the docs](https://ilyasdeckers.github.io/vuetiful-docs/)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FIlyasDeckers%2Fvuetiful.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FIlyasDeckers%2Fvuetiful?ref=badge_large)
