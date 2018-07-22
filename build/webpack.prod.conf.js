@@ -7,9 +7,9 @@ const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
@@ -17,6 +17,16 @@ const env = process.env.NODE_ENV === 'testing'
 
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
+    rules: [
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [ MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ],
+      },
+    ]
   },
   devtool: config.build.productionSourceMap ? config.build.devtool : false,
   output: {
@@ -36,7 +46,10 @@ const webpackConfig = merge(baseWebpackConfig, {
     }
 },
   plugins: [
-    // http://vuejs.github.io/vue-loader/en/workflow/production.html
+    new MiniCssExtractPlugin({
+      filename: '[name].[hash].css',
+      chunkFilename: '[id].[hash].css',
+    }),
     new webpack.DefinePlugin({
       'process.env': env
     }),
@@ -49,16 +62,11 @@ const webpackConfig = merge(baseWebpackConfig, {
       sourceMap: config.build.productionSourceMap,
       parallel: true
     }),
-    // Compress extracted CSS. We are using this plugin so that possible
-    // duplicated CSS from different components can be deduped.
     new OptimizeCSSPlugin({
       cssProcessorOptions: config.build.productionSourceMap
         ? { safe: true, map: { inline: false } }
         : { safe: true }
     }),
-    // generate dist index.html with correct asset hash for caching.
-    // you can customize output by editing /index.html
-    // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: process.env.NODE_ENV === 'testing'
         ? 'index.html'
@@ -69,17 +77,11 @@ const webpackConfig = merge(baseWebpackConfig, {
         removeComments: true,
         collapseWhitespace: true,
         removeAttributeQuotes: true
-        // more options:
-        // https://github.com/kangax/html-minifier#options-quick-reference
       },
-      // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency'
     }),
-    // keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),
-    // enable scope hoisting
     new webpack.optimize.ModuleConcatenationPlugin(),
-    // copy custom static assets
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, '../static'),
