@@ -1,11 +1,56 @@
 #!/bin/bash
 
+if [ -d $(pwd)/mobile ]   # for file "if [-f /home/rama/file]"
+then
+    echo Error mobile project exists
+    exit 1
+fi
+
+if type -p java; then
+    _java=java
+elif [[ -n "$JAVA_HOME" ]] && [[ -x "$JAVA_HOME/bin/java" ]];  then
+    _java="$JAVA_HOME/bin/java"
+else
+    echo Java is not installed or properly configured
+    exit 1
+fi
+
+if [[ "$_java" ]]; then
+    version=$("$_java" -version 2>&1 | awk -F '"' '/version/ {print $2}')
+    if [[ "$version" < "1.5" ]]; then
+      echo Java version is less than 1.5
+      exit 1
+    fi
+fi
+
 # if cordova exists do not install
+[[ "$(command -v cordova)" ]] || {
+  echo "Warning: Cordova is not installed" 1>&2 ;
+  echo Attempting installation of Cordova
 
-cordova create mobile com.f1lt3r."${PWD##*/}"
+  sudo npm install -g cordova > /dev/null 2>&1
+  if [ "$(command -v cordova)" ]; then
+    echo Cordova succesfully installed
+  else
+    echo Cannot install Cordova your system.
+    echo "Read the installation manual on: https://cordova.apache.org/docs/en/latest/guide/cli/#installing-the-cordova-cli"
+  fi
+}
 
+echo Creating cordova project...
+
+cordova create mobile com.f1lt3r."${PWD##*/}" > /dev/null 2>&1
+cd mobile
+cordova platform add android > /dev/null 2>&1
+
+echo Copying build files to the cordova webroot..
+cd ..
 rm -rf mobile/www/*
 ln -s $(pwd)/dist/* $(pwd)/mobile/www/
 
-cd mobile
-cordova platform add android
+echo Finished
+echo ""
+echo Usage:
+echo ""
+echo "  Enter the mobile directory and run"
+echo "     "'cordova run android'""
