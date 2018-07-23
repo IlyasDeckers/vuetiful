@@ -1,3 +1,4 @@
+/* eslint-disable */
 import home from './Home'
 
 describe('@/app/home', () => {

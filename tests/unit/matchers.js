@@ -4,7 +4,7 @@
 const _ = require('lodash')
 const customMatchers = {}
 
-customMatchers.toBeAComponent = function(options) {
+customMatchers.toBeAComponent = function (options) {
   if (isAComponent()) {
     return {
       message: () =>
@@ -23,12 +23,12 @@ customMatchers.toBeAComponent = function(options) {
     }
   }
 
-  function isAComponent() {
+  function isAComponent () {
     return _.isPlainObject(options) && typeof options.render === 'function'
   }
 }
 
-customMatchers.toBeAViewComponent = function(options, mockInstance) {
+customMatchers.toBeAViewComponent = function (options, mockInstance) {
   if (usesALayout() && definesAPageTitleAndDescription()) {
     return {
       message: () =>
@@ -47,11 +47,11 @@ customMatchers.toBeAViewComponent = function(options, mockInstance) {
     }
   }
 
-  function usesALayout() {
+  function usesALayout () {
     return options.components && options.components.Layout
   }
 
-  function definesAPageTitleAndDescription() {
+  function definesAPageTitleAndDescription () {
     if (!options.page) return false
     const pageObject =
       typeof options.page === 'function'
@@ -69,11 +69,11 @@ customMatchers.toBeAViewComponent = function(options, mockInstance) {
   }
 }
 
-customMatchers.toBeAViewComponentUsing = function(options, mockInstance) {
+customMatchers.toBeAViewComponentUsing = function (options, mockInstance) {
   return customMatchers.toBeAViewComponent.apply(this, [options, mockInstance])
 }
 
-customMatchers.toBeAVuexModule = function(options) {
+customMatchers.toBeAVuexModule = function (options) {
   if (isAVuexModule()) {
     return {
       message: () =>
@@ -90,7 +90,7 @@ customMatchers.toBeAVuexModule = function(options) {
     }
   }
 
-  function isAVuexModule() {
+  function isAVuexModule () {
     return (
       _.isPlainObject(options) &&
       _.isPlainObject(options.state) &&

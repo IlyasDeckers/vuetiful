@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Vue from 'vue'
 import card from '../_base-card'
 

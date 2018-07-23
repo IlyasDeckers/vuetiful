@@ -59,5 +59,6 @@ export function install (Vue) {
     cluster: env.PUSHER.CLUSTER,
     encrypted: true
   })
+  console.log(pusher)
   Vue.prototype.$pusher = pusher.pusher
 }

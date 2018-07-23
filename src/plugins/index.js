@@ -7,6 +7,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import brands from '@fortawesome/fontawesome-free-brands'
 
+import moduleName from '@/utilities/module-name'
+
 (!process.env.FA_PRO)
   ? fontawesome.library.add(fas, far, brands) // Free icons
   : fontawesome.library.add(solid, light, brands, regular) // Pro icons
@@ -16,18 +18,9 @@ requireModule.keys().forEach(fileName => {
   // Skip this file, as it's not a plugin
   if (fileName === './index.js') return
 
-  // Fomat the plugin name from fileName
-  const pluginName = fileName
-    .replace(/^\.\//, '')
-    .replace(/\.\w+$/, '')
-
-  // Require the plugin
+  const pluginName = moduleName(fileName)
   const plugin = require('./' + pluginName)
   Vue.use(plugin.install)
-
-  if (plugin.default) {
-    // export default (?)
-  }
 })
 
 export { default as http } from './http'

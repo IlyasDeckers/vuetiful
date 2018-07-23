@@ -1,10 +1,7 @@
+/* eslint-disable */
 import * as authModule from './auth'
 
 describe('./auth', () => {
-  it('exports a valid Vuex module', () => {
-    // expect(authModule).toBeAVuexModule()
-  })
-
   describe('in a store', () => {
     let store
     beforeEach(() => {
