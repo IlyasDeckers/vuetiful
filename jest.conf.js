@@ -5,10 +5,10 @@ const _ = require('lodash')
 process.env.MOCK_API_PORT = process.env.MOCK_API_PORT || _.random(9000, 9999)
 
 module.exports = {
-  setupFiles: ['<rootDir>./test/unit/setup'],
-  globalSetup: '<rootDir>/test/unit/global-setup',
-  globalTeardown: '<rootDir>/test/unit/global-teardown',
-  setupTestFrameworkScriptFile: '<rootDir>/test/unit/matchers',
+  setupFiles: ['<rootDir>./tests/unit/setup'],
+  globalSetup: '<rootDir>/tests/unit/global-setup',
+  globalTeardown: '<rootDir>/tests/unit/global-teardown',
+  setupTestFrameworkScriptFile: '<rootDir>/tests/unit/matchers',
   testMatch: ['**/(*.)unit.js'],
   moduleFileExtensions: ['js', 'json', 'vue'],
   transform: {

@@ -1,6 +1,6 @@
 import * as typeValidator from './type-validator'
 
-const floatTest = /^(\-|\+)?([0-9]+(\.[0-9]+)?|Infinity)$/
+const floatTest = /^(-|\+)?([0-9]+(\.[0-9]+)?|Infinity)$/
 
 const evaluators = [
   {
