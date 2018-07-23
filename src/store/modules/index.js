@@ -7,10 +7,8 @@ const requireModule = require.context('.', true, /^((?!\.unit\.).)*\.js$/)
 const root = { modules: {} }
 
 requireModule.keys().forEach(fileName => {
-  // Skip this file, as it's not a module
   if (fileName === './index.js') return
 
-  // Get the module path as an array
   const modulePath = fileName
     .replace(/^\.\//, '')
     .replace(/\.\w+$/, '')
@@ -18,8 +16,6 @@ requireModule.keys().forEach(fileName => {
 
   // Get the modules object for the current path
   const { modules } = getNamespace(root, modulePath)
-
-  // Add the module to our modules object
   modules[modulePath.pop()] = {
     namespaced: true,
     ...requireModule(fileName)

@@ -1,4 +1,5 @@
 import mapValues from './map-values'
+import groupBy from './'
 
 export default function nest (array, keys) {
   if (!keys.length) {

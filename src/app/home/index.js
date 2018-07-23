@@ -1,9 +1,9 @@
-const Home = () => import(/* webpackChunkName: "pages-home" */ './Home.vue')
+const Home = () => import(/* webpackChunkName: "views-home" */ './Home.vue')
 
 export const routes = [
   {
     path: '/',
     component: Home,
     meta: { auth: false }
-  }
+  },
 ]

@@ -77,14 +77,12 @@ export default {
     },
     AddData (data) {
       if (typeof data !== 'object') {
-        console.log('AddData accept only Object', data)
         return false
       }
       if (data.preventDuplicates) {
         var listKeys = Object.keys(this.list[data.position])
         for (var i = 0; i < listKeys.length; i++) {
           if (this.list[data.position][listKeys[i]].title === data.title && this.list[data.position][listKeys[i]].msg === data.msg) {
-            console.log('Prevent Duplicates', data)
             return false
           }
         }

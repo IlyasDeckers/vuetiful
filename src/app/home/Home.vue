@@ -56,7 +56,6 @@ export default {
 }
               </code>
             </pre>
-            <calendar />
           </div>
         </div>
         <div class="flex-1" />
@@ -66,12 +65,9 @@ export default {
 </template>
 
 <script>
-import calendar from '@/plugins/calendar/components/Calendar'
-
 export default {
-  components: { calendar },
   created () {
-    console.log(this.$test)
+    console.log('created')
   }
 }
 </script>

@@ -1,3 +1,15 @@
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      default: '',
+      required: true
+    }
+  }
+}
+</script>
+
 <template>
   <div class="card">
     <div class="card-header">
@@ -16,14 +28,3 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  props: {
-    title: {
-      type: String,
-      required: true
-    }
-  }
-}
-</script>
