@@ -17,8 +17,8 @@ init:
 install:
   - ps: Install-Product node 8 x64
   - git reset --hard HEAD
-  - yarn
   - node --version
+  - npm install
 
 build_script:
   - npm run unit
