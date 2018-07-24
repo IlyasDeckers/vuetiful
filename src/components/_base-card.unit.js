@@ -1,6 +1,6 @@
 /* eslint-disable */
 import Vue from 'vue'
-import card from '../_base-card'
+import card from './_base-card'
 
 describe('@/components/_base-card', () => {
   it('renders correctly with different props', () => {

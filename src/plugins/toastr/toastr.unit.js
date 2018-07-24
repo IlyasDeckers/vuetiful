@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { createLocalVue } from 'vue-test-utils'
 import * as toastr from './toastr'
 
@@ -50,11 +49,5 @@ describe('./pusher', () => {
       })['closeOnHover']).toEqual(true)
     })
 
-    it('Prevents duplicates', () => {
-      expect(localVue.prototype.$toastr.i({
-        msg: 'No Timeout',
-        preventDuplicates: true
-      })['preventDuplicates']).toEqual(true)
-    })
   })
 })

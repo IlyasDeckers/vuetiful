@@ -13,7 +13,7 @@ describe('./truncate', () => {
       expect(result).toEqual('Lorem ipsum dol...')
     })
 
-    it('truncates 15 characters on string with less characters', () => {
+    it('truncates no characters on string with less than th specified characters', () => {
       const result = truncate('Lorem ipsum.', 15)
       expect(result).toEqual('Lorem ipsum.')
     })

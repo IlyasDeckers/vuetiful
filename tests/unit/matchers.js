@@ -29,12 +29,12 @@ customMatchers.toBeAComponent = function (options) {
 }
 
 customMatchers.toBeAViewComponent = function (options, mockInstance) {
-  if (usesALayout() && definesAPageTitleAndDescription()) {
+  if (definesAComponentName()) {
     return {
       message: () =>
         `expected ${this.utils.printReceived(
           options
-        )} not to register a local Layout component nor define a page title and meta description`,
+        )} not to define a view name`,
       pass: true,
     }
   } else {
@@ -51,20 +51,8 @@ customMatchers.toBeAViewComponent = function (options, mockInstance) {
     return options.components && options.components.Layout
   }
 
-  function definesAPageTitleAndDescription () {
-    if (!options.page) return false
-    const pageObject =
-      typeof options.page === 'function'
-        ? options.page.apply(mockInstance || {})
-        : options.page
-    if (!pageObject.hasOwnProperty('title')) return false
-    if (!pageObject.meta) return false
-    const hasMetaDescription = pageObject.meta.some(
-      metaProperty =>
-        metaProperty.name === 'description' &&
-        metaProperty.hasOwnProperty('content')
-    )
-    if (!hasMetaDescription) return false
+  function definesAComponentName () {
+    if (!options.name) return false
     return true
   }
 }

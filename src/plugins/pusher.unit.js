@@ -1,5 +1,3 @@
-/* eslint-disable */
-import Vue from 'vue'
 import { createLocalVue } from 'vue-test-utils'
 import * as pusher from './pusher'
 
@@ -21,8 +19,6 @@ describe('./pusher', () => {
     })
 
     it('Installs pusher when not enabled', () => {
-      const localVue = createLocalVue()
-      localVue.use(pusher)
       expect(localVue.prototype.$pusher).toEqual({
         error: 'Pusher not enabled. Set the ENABLED variable to true in your config to enable pusher.'
       })
