@@ -1,4 +1,4 @@
-const compare = function compare (x, y, reverse = false) {
+export default function compare (x, y, reverse = false) {
   let comparison = 0
 
   if (x > y) {
@@ -8,5 +8,3 @@ const compare = function compare (x, y, reverse = false) {
   }
   return reverse ? comparison * -1 : comparison
 }
-
-export default compare

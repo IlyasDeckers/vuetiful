@@ -1,6 +1,6 @@
 import store from '@/store'
 import { http } from '@/plugins'
-import { array_get as arrayGet } from '@/utilities'
+import arrayGet from '@/utilities/array-get'
 
 const auth = {
   async login (credentials) {

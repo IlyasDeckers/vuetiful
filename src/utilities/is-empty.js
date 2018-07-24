@@ -13,5 +13,5 @@ export default function isEmpty (val) {
     }
     return true
   }
-  throw new TypeError('Val must be a string, array or object');
+  throw new TypeError('Val must be a string, array or object')
 }

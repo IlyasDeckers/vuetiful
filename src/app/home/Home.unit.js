@@ -6,7 +6,7 @@ describe('@/app/home', () => {
     expect(Home).toBeAViewComponent()
   })
 
-  it('has a created hook', () => {
+  it('has a mounted hook', () => {
     expect(typeof Home.mounted).toBe('function')
   })
 })

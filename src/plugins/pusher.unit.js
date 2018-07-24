@@ -1,12 +1,6 @@
 import { createLocalVue } from 'vue-test-utils'
 import * as pusher from './pusher'
 
-process.env.PUSHER = {
-  ENABLED: true,
-  KEY: '"your-key"',
-  CLUSTER: '"eu"'
-}
-
 describe('./pusher', () => {
   describe('initializes Pusher', () => {
     const localVue = createLocalVue()
