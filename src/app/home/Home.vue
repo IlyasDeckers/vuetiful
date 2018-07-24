@@ -3,7 +3,7 @@
     <div class="w-full h-64 bg-blue-light text-center text-white">
       <h1 class="p-4 pt-16 text-white font mono">Vuetiful</h1>
       <p class="pb-4 text-white">VueJS framework with TailwindCSS for rapid development</p>
-      <a href="https://ilyasdeckers.github.io/vuetiful-docs/" class="p-4"><fa-icon :icon="['far', 'book']" /> Documentation</a> |
+      <a href="https://ilyasdeckers.github.io/vuetiful-docs/" class="p-4"><fa-icon :icon="['fa', 'book']" /> Documentation</a> |
       <a href="https://github.com/ilyasdeckers/vuetiful" class="p-4">
         <fa-icon :icon="['fab', 'github']" /> GitHub
       </a>
@@ -17,9 +17,9 @@
             <code>
 <div class="text-grey">// Install the dependencies</div>npm install
 
-<div class="text-grey">// Run with hot reloading on localhost:8080</div>npm run dev
+<div class="text-grey">// Run unit tests</div>npm run unit
 
-<div class="text-grey">// Run the documentation on localhost:8081</div>npm run docs:dev
+<div class="text-grey">// Run with hot reloading on localhost:8080</div>npm run dev
             </code>
           </pre>
           <div class="my-8">
@@ -66,8 +66,8 @@ export default {
 
 <script>
 export default {
-  created () {
-    console.log('created')
+  name: 'Home',
+  mounted () {
   }
 }
 </script>
