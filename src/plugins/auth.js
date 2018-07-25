@@ -1,6 +1,6 @@
 import store from '@/store'
 import { http } from '@/plugins'
-import arrayGet from '@/utilities/array-get'
+import { arrayGet } from 'vuetiful-utilities'
 
 const auth = {
   async login (credentials) {

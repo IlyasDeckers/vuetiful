@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import moduleName from '@/utilities/module-name'
+import { moduleName } from 'vuetiful-utilities'
 
 const requireModule = require.context('.', true, /^((?!\.unit\.).)*\.js$/)
 requireModule.keys().forEach(fileName => {
