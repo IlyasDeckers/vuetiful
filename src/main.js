@@ -5,8 +5,11 @@ import store from './store'
 import { sync } from 'vuex-router-sync'
 
 import '@/plugins'
-import '@/filters'
 import '@/components'
+
+import filters from 'vuetiful-filters'
+
+Vue.use(filters)
 
 sync(store, router)
 
