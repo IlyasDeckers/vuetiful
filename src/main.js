@@ -1,13 +1,12 @@
 import Vue from 'vue'
-import App from './App'
+import App from './app/App'
 import router from './router'
 import store from './store'
 import { sync } from 'vuex-router-sync'
+import filters from 'vuetiful-filters'
 
 import '@/plugins'
 import '@/components'
-
-import filters from 'vuetiful-filters'
 
 Vue.use(filters)
 

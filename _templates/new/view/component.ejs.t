@@ -3,29 +3,17 @@ to: "src/app/<%= h.inflection.dasherize(folder).toLowerCase() %>/<%= h.inflectio
 eof_last: false
 unless_exists: true
 ---
-<%
-if (blocks.indexOf('template') !== -1) {
-%>
 <template>
-  <div>
-
+  <div class="w-full m-32 text-center">
+    <p><%= h.inflection.dasherize(name) %></p>
   </div>
 </template>
-<%
-}
 
-if (blocks.indexOf('script') !== -1) {
-%>
 <script>
 export default {
+  name: '<%= h.inflection.dasherize(name) %>',
 }
 </script>
-<%
-}
 
-if (blocks.indexOf('style') !== -1) {
-%>
 <style lang="scss" module>
-</style><%
-}
-%>
+</style>

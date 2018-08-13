@@ -33,7 +33,13 @@ module.exports = {
     'comma-dangle': ['error', {
       'objects': 'ignore',
       'arrays': 'ignore'
-    }]
+    }],
+    'no-multiple-empty-lines': [
+      "error", {
+        "max": 2,
+        "maxEOF": 1
+      }
+    ]
   },
 
   'extends': [

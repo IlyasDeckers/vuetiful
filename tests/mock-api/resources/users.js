@@ -20,7 +20,7 @@ module.exports = {
       token: `valid-token-for-${user.username}`,
     }
   }),
-  authenticate({ username, password }) {
+  authenticate ({ username, password }) {
     return new Promise((resolve, reject) => {
       const matchedUser = this.all.find(
         user => user.username === username && user.password === password
@@ -32,11 +32,11 @@ module.exports = {
       }
     })
   },
-  findBy(propertyName, value) {
+  findBy (propertyName, value) {
     const matchedUser = this.all.find(user => user[propertyName] === value)
     return this.json(matchedUser)
   },
-  json(user) {
+  json (user) {
     return user && _.omit(user, ['password'])
   },
 }

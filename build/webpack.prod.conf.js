@@ -44,7 +44,7 @@ const webpackConfig = merge(baseWebpackConfig, {
             }
         }
     }
-},
+  },
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',

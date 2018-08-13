@@ -1,6 +1,15 @@
 #!/bin/bash
 
-if [ -d $(pwd)/mobile ]   # for file "if [-f /home/rama/file]"
+##
+#
+# Initializes the cordova project.
+# This is still a WIP. Does not work straight out of the box.
+#
+# See: https://cordova.apache.org/docs/en/latest/guide/overview/index.html
+#
+##
+
+if [ -d $(pwd)/mobile ]
 then
     echo Error mobile project exists
     exit 1
@@ -18,7 +27,8 @@ fi
 if [[ "$_java" ]]; then
     version=$("$_java" -version 2>&1 | awk -F '"' '/version/ {print $2}')
     if [[ "$version" < "1.5" ]]; then
-      echo Java version is less than 1.5
+      echo Java version is less than 3.7
+      echo Please update Java. See: https://cordova.apache.org/docs/en/latest/guide/platforms/android/
       exit 1
     fi
 fi
@@ -39,18 +49,23 @@ fi
 
 echo Creating cordova project...
 
+# Create an empty cordova project
 cordova create mobile com.f1lt3r."${PWD##*/}" > /dev/null 2>&1
 cd mobile
+
+# Add the android platform
 cordova platform add android > /dev/null 2>&1
 
 echo Copying build files to the cordova webroot..
 cd ..
 rm -rf mobile/www/*
+
+# Create a symbolic link from the build filesto Cordova's webroot
 ln -s $(pwd)/dist/* $(pwd)/mobile/www/
 
 echo Finished
 echo ""
 echo Usage:
 echo ""
-echo "  Enter the mobile directory and run"
+echo "  Enter the mobile directory and run:"
 echo "     "'cordova run android'""

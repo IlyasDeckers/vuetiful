@@ -5,5 +5,5 @@ export const routes = [
     path: '/',
     component: Home,
     meta: { auth: false }
-  },
+  }
 ]

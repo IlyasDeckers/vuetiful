@@ -1,7 +1,7 @@
 ---
 to: 'src/app/index.js'
 inject: true
-before: ']'
+after: 'const routes = \['
 skip_if: '...<%= h.inflection.dasherize(folder) %>,'
 eof_last: false
 ---
